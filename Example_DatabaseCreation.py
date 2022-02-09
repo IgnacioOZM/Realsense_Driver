@@ -5,6 +5,14 @@ from driver import realsense
 
 def save_images(path: str, image):
     # Check directory
+    images = list()
+    labels = list()
+    images_counter = 0
+    labels_counter = 0
+    top = os.getcwd() + "/"
+    for file in os.listdir(top + path):
+            if file.endswith(".png"):
+                pngCounter += 1
     os.makedirs(path, exist_ok=True)
 
     # Check image counter

@@ -1,52 +1,52 @@
-## 
+# #
 # Class definition DiverRealsense
 # Author: Ignacio Ortiz de Zúñiga Mingot
 # Date: June 2021
 # Course: 1º MII + MIC
-#
+
 # Purpose: Definition of a class to handle all functions and variables
 # needed to controll the camera. It uses parameters and functions
 # from the realsense SDK class pipeline.
-#
+
 # Functions:
 #   - __init__():       Creates a new object of the class self, it creates a new
 #                       pipe to connect with the self and sets a custom
 #                       configuration.
-#
+
 #   - __del__():        Stops the pipeline before destroying the class. It has
 #                       to be done to avoid errors when reconnecting.
-#
+
 #   - setCalibration(): Loads custom intrinsics and extrinsics determine
 #                       by Camera_Calibration_CICLAB.py
-#
+
 #   - getColour():     Returns a colour image(1920x1080x3 uint8). It gets colour
 #                       and depth data from the self, alaings it and reshape it
 #                       into a matrix form.
-#
+
 #   - getDepth():      Returns a depth image(1024x768 uint16). It gets depth
 #                       data from the self, alaings (if wanted) it and reshape it into a
 #                       matrix form.
-#
+
 #   - getIR():         Returns a infrared image(1024x768 uint16). It gets ir
 #                       data from the self, alaings (if wanted) it and reshape it into a
 #                       matrix form.
-#
+
 #   - getImages():   Returns a colour image(1920x1080x3 uint8) and depth image 
 #                       (1024x768 uint16) and a infrared image (1024x768 z8) if requested.
 #                       It gets colour, depth and IR data from the self, alaings it and 
 #                       reshape it into a matrix form.
-#
+
 #   - saveImages():     Saves a colour image(1920x1080x3 uint8) and depth image 
 #                       (1024x768 uint16) and a infrared image (1024x768 z8).
 #                       It gets colour, depth and IR data from the self, alaings 
 #                       (if wanted) it and reshape it into a matrix form.
-#
+
 #   - transform_RGB_To_Depth(): Transform point between RGB and Depth images. It uses the
 #                       camera intrinsics and extrinsics.
-#
+
 #   - getPosition():    Transform point between RGB and Depth images. It uses the
 #                       camera intrinsics and extrinsics.
-##
+# #
 
 import pyrealsense2 as rs
 import numpy as np
